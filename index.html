@@ -11,7 +11,39 @@
         <script type="text/jsx">
             const app = document.getElementById('app')
 
-            ReactDOM.render(<h1>Develop. Preview. Ship. 🚀 .</h1>,app)
+            function ProjectsList(){
+                const projects = ['Youtube Editor','Crypto Trading','Onaranlar Club','Photographer Appointment']
+
+                return(
+                        <ul>
+                            {projects.map(name => (
+                                <li key={name}>{name}</li>
+                            ))}
+                        </ul>
+                )
+
+            }
+
+            function Header({title}) {
+                return <h1>{title}</h1>
+            }
+
+            function Footer(props) {
+                return <h3>{props.title}</h3>
+            }
+
+            function HomePage(){
+                return (<div>
+                    <Header title="Develop. Preview. Ship."/>
+                    <Header title="Mehmet Uzel"/>
+                    <Footer title="Software Engineer"/>
+                    <Footer title="Projects:"/>
+                    <ProjectsList/>
+
+                </div>)
+            }
+
+            ReactDOM.render(<HomePage/>,app)
         </script>
     </body>
 </html>
